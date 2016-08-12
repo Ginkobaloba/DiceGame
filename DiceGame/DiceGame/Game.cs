@@ -12,6 +12,7 @@ namespace pigDiceGame
         player playerTwo;
         Dice firstDie;
         int roundNumber;
+        int TempScore;
     public void Setup()
         {
             Console.WriteLine("Good Day. Your Invited to play a Game of Pig!");
@@ -19,18 +20,18 @@ namespace pigDiceGame
             if (Console.ReadLine() == "1")
             {
                 Console.WriteLine("Excellent! Please, provide me with your name");
-                this.playerOne = new player(Console.ReadLine());
+                this.playerOne = new player(Console.ReadLine(),false);
                 Console.WriteLine("Thank you, {0}", playerOne.getPlayerName());
-                this.playerTwo = new player("Automatic Pig Game Robot");
+                this.playerTwo = new player("Automatic Pig Game Robot",true);
 
             }
             else
             {
                 Console.WriteLine("Excellent! PlayerOne please provide me with your name:");
-                this.playerOne = new player(Console.ReadLine());
+                this.playerOne = new player(Console.ReadLine(),false);
                 Console.WriteLine("Hello, {0} thank you for playing.", playerOne.getPlayerName());
                 Console.WriteLine("PlayerTwo please provide me with your name?:");
-                this.playerTwo = new player(Console.ReadLine());
+                this.playerTwo = new player(Console.ReadLine(),false);
                 Console.WriteLine("Thank you, {0}", playerTwo.getPlayerName());
             }
             this.firstDie = new Dice(6);
@@ -69,7 +70,6 @@ namespace pigDiceGame
             while (playerOne.getPlayerScore() < 100 && playerTwo.getPlayerScore() < 100)
             {
                 Console.WriteLine("Sup, my ninja");
-                Console.ReadLine();
             }
         }
 

@@ -10,11 +10,13 @@ namespace pigDiceGame
     {
         string PlayerName;
         int PlayerScore;
+        bool isBot;
 
-        public player(string PlayerName)
+        public player(string PlayerName, bool isbot)
         {
             this.PlayerName = PlayerName;
             this.PlayerScore = 0;
+            this.isBot = isbot;
         }
 
         public void setPlayerName(string PlayerName)
